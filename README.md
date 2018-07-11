@@ -8,19 +8,19 @@ https://www.163yun.com/help/documents/33716973365022720
 ### 总体环境需求：
 
 我们的部分代码会针对不同系统版本做优化，在新的平台上使用新的 API。编译运行该 Demo 的 build tools最低版本要求为19。</br>
-由于 Demo 中使用到了部分 java7 以上的特性，因此 JDK 请使用 JDK7 或以上版本。
-如果你使用的 IDE 是 Android Studio，可直接在 IDE 中打开 Demo 工程，然后将工程目录下 gradle.properties 文件按照注释修改，就可以直接编译运行。
+由于 Demo 中使用到了部分 java7 以上的特性，因此 JDK 请使用 JDK7 或以上版本。</br>
+如果你使用的 IDE 是 Android Studio，可直接在 IDE 中打开 Demo 工程，然后将工程目录下 gradle.properties 文件按照注释修改，就可以直接编译运行。</br>
 
-如果你是第一次使用 Android Studio，导入时会从 gradle 网站下载 gradle 发布包，在国内下载可能会比较慢。这时你也可以通过 Android Studio 设置，不使用 gradle wrapper，改为使用 local gradle distribution。
-如果你使用的 IDE 是 Eclipse，可直接在 IDE 中打开工程，做如下修改后，即可编译运行。
+如果你是第一次使用 Android Studio，导入时会从 gradle 网站下载 gradle 发布包，在国内下载可能会比较慢。这时你也可以通过 Android Studio 设置，不使用 gradle wrapper，改为使用 local gradle distribution。</br>
+如果你使用的 IDE 是 Eclipse，可直接在 IDE 中打开工程，做如下修改后，即可编译运行。</br>
 
-由于在 Eclipse 配置 libs 外的 jar 包比较麻烦，且不能配置 jni 库的位置，因此你需要把 libs-sdk 的所有文件夹移动到 libs 目录下（Demo 1.5版本及以后不需要）。
-注释掉 AboutActivity 中 initViewData() 函数的函数体。这行使用 Android Studio 编译期添加 BuildConfig 字段的特性，在 Eclipse 上无法完成，直接注释掉即可。
-如果你需要试验发送地理位置功能，请将 AndroidManifest 中的 {AMAP_KEY} 替换为 demo/build.gradle 文件中 buildTypes 内对应的值。在 Android Studio 上会在编译器自动替换。
-由于需要使用 JDK7 编译，旧版本的 ADT 插件仅支持到1.6，因此你需要使用最新的 ADT 版本（23.0及以上）才能正确编译 Demo。
-将 UIKit 下 AndoridManifeset 文件下所有 Activity 声明复制到 APP 工程的 AndoridManifeset 文件中。
-将 UIKit 下 assets 目录下所有资源复制到 APP工程的 assets 目录下。
-由于 google 已经将 Android Studio 作为官方开发工具，不再提供 ADT Bundle 下载，继续使用 Eclipse 开发会让你错过很多新特性，因此我们强烈建议你使用 Android Studio 开发基于网易云通信 SDK 的 APP，该 Demo的很多自动化特性也将只有 Android Studio 才能体验到。
+由于在 Eclipse 配置 libs 外的 jar 包比较麻烦，且不能配置 jni 库的位置，因此你需要把 libs-sdk 的所有文件夹移动到 libs 目录下（Demo 1.5版本及以后不需要）。</br>
+注释掉 AboutActivity 中 initViewData() 函数的函数体。这行使用 Android Studio 编译期添加 BuildConfig 字段的特性，在 Eclipse 上无法完成，直接注释掉即可。</br>
+如果你需要试验发送地理位置功能，请将 AndroidManifest 中的 {AMAP_KEY} 替换为 demo/build.gradle 文件中 buildTypes 内对应的值。在 Android Studio 上会在编译器自动替换。</br>
+由于需要使用 JDK7 编译，旧版本的 ADT 插件仅支持到1.6，因此你需要使用最新的 ADT 版本（23.0及以上）才能正确编译 Demo。</br>
+将 UIKit 下 AndoridManifeset 文件下所有 Activity 声明复制到 APP 工程的 AndoridManifeset 文件中。</br>
+将 UIKit 下 assets 目录下所有资源复制到 APP工程的 assets 目录下。</br>
+由于 google 已经将 Android Studio 作为官方开发工具，不再提供 ADT Bundle 下载，继续使用 Eclipse 开发会让你错过很多新特性，因此我们强烈建议你使用 Android Studio 开发基于网易云通信 SDK 的 APP，该 Demo的很多自动化特性也将只有 Android Studio 才能体验到。</br>
 
 源码结构
 ~~~
@@ -184,33 +184,33 @@ public void onHangUp() {
 ~~~
 ### 聊天室代码说明
 结构说明
-activity包：界面相关
-adapter包：适配器相关
-constant包：常量定义
-fragment包：界面相关。其中包括 tab 包，定义了聊天室框架中的 tab fragment。
-helper包：缓存管理，通知类消息字段管理等辅助功能。
-module包：模块化相关。包括聊天室收发消息模块。
-thirdparty包：第三方实现相关。包括网易云通信 demo 聊天室 http 客户端。
-viewholder包：界面相关 viewholder 展示。
-widget包：聊天室相关控件
+activity包：界面相关</br>
+adapter包：适配器相关</br>
+constant包：常量定义</br>
+fragment包：界面相关。其中包括 tab 包，定义了聊天室框架中的 tab fragment。</br>
+helper包：缓存管理，通知类消息字段管理等辅助功能。</br>
+module包：模块化相关。包括聊天室收发消息模块。</br>
+thirdparty包：第三方实现相关。包括网易云通信 demo 聊天室 http 客户端。</br>
+viewholder包：界面相关 viewholder 展示。</br>
+widget包：聊天室相关控件</br>
 ### 重点类说明
-ChatRoomsFragment：直播间列表 fragment。包含向网易云通信Demo应用服务器请求聊天室列表操作。
-ChatRoomActivity：聊天室界面。封装了 ChatRoomFragment。包括聊天室的进入/离开的操作，监听聊天室在线状态和监听聊天室被踢出状态。
-ChatRoomTabFragment：聊天室内 tab fragment 的基类。
-ChatRoomFragment：聊天室 Activity 包含的顶层 Fragment。包括界面上方界面和下方的 viewpager。viewpager 包含3个 tab fragment，分别是：MessageTabFragment （直播互动 tab）， MasterTabFragment （主播 tab）， OnlinePeopleTabFragment （在线成员 tab）。
-MessageTabFragment：直播互动基类 fragment。内嵌 ChatRoomMessageFragment （直播互动 fragment）。
-MasterTabFragment：主播基类 fragment。内嵌 MasterFragment（主播 fragment ）。
-OnlinePeopleTabFragment：在线成员基类 fragment。内嵌 OnlinePeopleFragment （在线成员 fragment）
-ChatRoomMessageFragment：聊天室直播互动 fragment。包括消息的收发相关操作。
-MasterFragment： 聊天室主播 fragment。包括获取聊天室资料等操作。
-OnlinePeopleFragment：聊天室在线人数 fragment。包括获取聊天室成员信息等操作。
-ChatRoomMsgViewHolderFactory: 聊天室消息项展示ViewHolder工厂类。包括消息展示 viewholder 的注册操作。
+ChatRoomsFragment：直播间列表 fragment。包含向网易云通信Demo应用服务器请求聊天室列表操作。</br>
+ChatRoomActivity：聊天室界面。封装了 ChatRoomFragment。包括聊天室的进入/离开的操作，监听聊天室在线状态和监听聊天室被踢出状态。</br>
+ChatRoomTabFragment：聊天室内 tab fragment 的基类。</br>
+ChatRoomFragment：聊天室 Activity 包含的顶层 Fragment。包括界面上方界面和下方的 viewpager。viewpager 包含3个 tab fragment，分别是：</br>MessageTabFragment （直播互动 tab）， MasterTabFragment （主播 tab）， OnlinePeopleTabFragment （在线成员 tab）。</br>
+MessageTabFragment：直播互动基类 fragment。内嵌 ChatRoomMessageFragment （直播互动 fragment）。</br>
+MasterTabFragment：主播基类 fragment。内嵌 MasterFragment（主播 fragment ）。</br>
+OnlinePeopleTabFragment：在线成员基类 fragment。内嵌 OnlinePeopleFragment （在线成员 fragment）</br>
+ChatRoomMessageFragment：聊天室直播互动 fragment。包括消息的收发相关操作。</br>
+MasterFragment： 聊天室主播 fragment。包括获取聊天室资料等操作。</br>
+OnlinePeopleFragment：聊天室在线人数 fragment。包括获取聊天室成员信息等操作。</br>
+ChatRoomMsgViewHolderFactory: 聊天室消息项展示ViewHolder工厂类。包括消息展示 viewholder 的注册操作。</br>
 新老版本兼容问题
 群通知相关
 问题：群通知新增的通知消息类型，可能会造成老版本崩溃。 原因：TeamNotificationHelper#buildUpdateTeamNotification 的 a.getUpdatedFields() 的 size 为0，造成 sb 的 length为0，会抛出 StringIndexOutOfBoundsException 错误。 解决方案：判断 sb 的length，参考demo。
 
-Android 6.0 权限管理
-网易云通信 demo 提供 Android 6.0 权限管理示例。相关方法的实现，在 uikit 的 permission 包中。
+Android 6.0 权限管理</br>
+网易云通信 demo 提供 Android 6.0 权限管理示例。相关方法的实现，在 uikit 的 permission 包中。</br>
 
 在需要相关权限的地方，发起申请并等待用户操作后的返回结果。具体实现方法：
 ~~~
