@@ -5,9 +5,9 @@ https://www.163yun.com/help/documents/33716973365022720
 下载编译 Demo
 用户可在下载页面进行下载 Demo 源码工程。
 
-总体环境需求：
+### 总体环境需求：
 
-我们的部分代码会针对不同系统版本做优化，在新的平台上使用新的 API。编译运行该 Demo 的 build tools最低版本要求为19。
+我们的部分代码会针对不同系统版本做优化，在新的平台上使用新的 API。编译运行该 Demo 的 build tools最低版本要求为19。<br>
 由于 Demo 中使用到了部分 java7 以上的特性，因此 JDK 请使用 JDK7 或以上版本。
 如果你使用的 IDE 是 Android Studio，可直接在 IDE 中打开 Demo 工程，然后将工程目录下 gradle.properties 文件按照注释修改，就可以直接编译运行。
 
