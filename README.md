@@ -23,6 +23,7 @@ https://www.163yun.com/help/documents/33716973365022720
 由于 google 已经将 Android Studio 作为官方开发工具，不再提供 ADT Bundle 下载，继续使用 Eclipse 开发会让你错过很多新特性，因此我们强烈建议你使用 Android Studio 开发基于网易云通信 SDK 的 APP，该 Demo的很多自动化特性也将只有 Android Studio 才能体验到。
 
 源码结构
+~~~
 由于 Demo 依赖于 UIKit 进行开发。分为 Demo 工程和 UIKit 工程。分别介绍这两个工程的源码结构。
 
 Demo日志地址：/{外卡根目录}/{app_package_name}/log/
@@ -66,9 +67,10 @@ AVChatVideo：视频管理， 视频界面初始化和界面相关操作管理
 AVChatSurface：视频绘制管理
 AVChatNotification：音视频聊天通知栏
 AVChatUIListener：音视频界面操作监听
+~~~
 初始化
 在 AVChatActivity 的 oncreate 中，进行管理器的初始化工作
-
+~~~
 avChatUI = new AVChatUI(this, root, this);
 if (!avChatUI.initiation()) {
     this.finish();
@@ -179,7 +181,8 @@ public void onHangUp() {
         hangUp(AVChatExitCode.CANCEL);
     }
 }
-聊天室代码说明
+~~~
+### 聊天室代码说明
 结构说明
 activity包：界面相关
 adapter包：适配器相关
@@ -190,7 +193,7 @@ module包：模块化相关。包括聊天室收发消息模块。
 thirdparty包：第三方实现相关。包括网易云通信 demo 聊天室 http 客户端。
 viewholder包：界面相关 viewholder 展示。
 widget包：聊天室相关控件
-重点类说明
+### 重点类说明
 ChatRoomsFragment：直播间列表 fragment。包含向网易云通信Demo应用服务器请求聊天室列表操作。
 ChatRoomActivity：聊天室界面。封装了 ChatRoomFragment。包括聊天室的进入/离开的操作，监听聊天室在线状态和监听聊天室被踢出状态。
 ChatRoomTabFragment：聊天室内 tab fragment 的基类。
@@ -210,7 +213,7 @@ Android 6.0 权限管理
 网易云通信 demo 提供 Android 6.0 权限管理示例。相关方法的实现，在 uikit 的 permission 包中。
 
 在需要相关权限的地方，发起申请并等待用户操作后的返回结果。具体实现方法：
-
+~~~
 private void requestBasicPermission() {
     MPermission.with(MainActivity.this)             
         .addRequestCode(BASIC_PERMISSION_REQUEST_CODE)
@@ -236,3 +239,4 @@ public void onBasicPermissionSuccess(){
 public void onBasicPermissionFailed(){
     Toast.makeText(this, "授权失败", Toast.LENGTH_SHORT).show();
 }
+~~~
